@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/summary_title"
+                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="?attr/colorOnSurface" />
+
+            <!-- Map View for Route -->
+            <org.maplibre.android.maps.MapView
+                android:id="@+id/mapSummary"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone" />
+
+            <!-- Header with color background and image placeholder (shown if map is hidden) -->
+            <FrameLayout
+                android:id="@+id/flSummaryHeader"
+                android:layout_width="match_parent"
+                android:layout_height="140dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="#FFD8C4" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_launcher_minitos_foreground"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                android:layout_marginTop="24dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvSummaryVehicle"
+                        android:text="@string/summary_vehicle"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryVehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="352. Carver" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvSummaryStart"
+                        android:text="@string/summary_trip_start"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="07-06-2026 01:09" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvSummaryEnd"
+                        android:text="@string/summary_trip_end"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="07-06-2026 01:09" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvSummaryDistance"
+                        android:text="@string/summary_distance_traveled"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="0 Km" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvSummaryDrivingCost"
+                        android:text="@string/summary_driving"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryDrivingCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="0 €" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvSummaryStandbyCost"
+                        android:text="@string/summary_standby"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryStandbyCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="0 €" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/tvSummaryTotalCost"
+                        android:text="@string/summary_total_amount"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryTotalCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="0 €" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <TextView
+                        android:id="@+id/tvCo2Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/tvSummaryCo2"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/summary_co2_saving"
+                        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <TextView
+                        android:id="@+id/tvSummaryCo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textStyle="bold"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        tools:text="0.00 Kg/CO2" />
+                </RelativeLayout>
+
+                <!-- Battery Section -->
+                <LinearLayout
+                    android:id="@+id/llSummaryBattery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:baselineAligned="false"
+                    android:layout_marginTop="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <TextView android:text="@string/summary_battery_start" android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:id="@+id/tvSummaryBatteryStart" android:textStyle="bold" android:textAppearance="?attr/textAppearanceBodyLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="--%"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <TextView android:text="@string/summary_battery_end" android:textSize="12sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:id="@+id/tvSummaryBatteryEnd" android:textStyle="bold" android:textAppearance="?attr/textAppearanceBodyLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" tools:text="--%"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/summary_charity_msg"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:gravity="center"
+                    android:layout_marginTop="24dp" />
+
+                <ImageView
+                    android:id="@+id/ivAtabalLogo"
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/atabal"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSummaryClose"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/summary_accept"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:cornerRadius="32dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

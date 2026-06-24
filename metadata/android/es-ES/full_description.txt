@@ -1,0 +1,2 @@
+Minitos es un cliente de código abierto e independiente para el servicio de movilidad eléctrica Minits.
+Esta aplicación permite localizar vehículos, gestionar reservas y controlar tus viajes de forma fluida y moderna, sin depender de los servicios propietarios de Google y utilizando tecnologías 100% libres.

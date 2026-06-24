@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Mi Perfil Minits"
+            app:navigationIcon="@drawable/abc_ic_ab_back_material" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- LOGIN CONTAINER -->
+            <LinearLayout
+                android:id="@+id/llLoginContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_launcher_minitos_foreground"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
+                    android:background="?attr/colorPrimaryContainer"
+                    android:padding="16dp"
+                    android:layout_marginBottom="32dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contraseña"
+                    app:passwordToggleEnabled="true"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_marginBottom="32dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Iniciar Sesión"
+                    app:cornerRadius="16dp" />
+            </LinearLayout>
+
+            <!-- PROFILE CONTAINER -->
+            <LinearLayout
+                android:id="@+id/llProfileContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimaryContainer"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="center">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_launcher_minitos_foreground"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
+                        android:background="?attr/colorOnPrimary"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre Usuario"
+                        android:textAppearance="?attr/textAppearanceTitleLarge"
+                        android:textColor="?attr/colorOnPrimaryContainer"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:id="@+id/tvProfileEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="email@example.com"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="?attr/colorOnPrimaryContainer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Datos Personales"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:layout_marginBottom="16dp" />
+
+                            <TextView android:text="Dirección" android:textAppearance="?attr/textAppearanceLabelSmall" android:textColor="?attr/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/tvProfileAddress" android:text="--" android:textAppearance="?attr/textAppearanceBodyLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+                            <TextView android:text="Código Postal" android:textAppearance="?attr/textAppearanceLabelSmall" android:textColor="?attr/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/tvProfileCP" android:text="--" android:textAppearance="?attr/textAppearanceBodyLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+                            <TextView android:text="Población" android:textAppearance="?attr/textAppearanceLabelSmall" android:textColor="?attr/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/tvProfileCity" android:text="--" android:textAppearance="?attr/textAppearanceBodyLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+                            <TextView android:text="Fecha de Nacimiento" android:textAppearance="?attr/textAppearanceLabelSmall" android:textColor="?attr/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/tvProfileBirth" android:text="--" android:textAppearance="?attr/textAppearanceBodyLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Verificación de Identidad"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:layout_marginBottom="16dp" />
+
+                            <TextView android:text="Número de Teléfono" android:textAppearance="?attr/textAppearanceLabelSmall" android:textColor="?attr/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+                                <TextView
+                                    android:id="@+id/tvProfilePhone"
+                                    android:text="+34 000 00 00 00"
+                                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1" />
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnChangePhone"
+                                    style="@style/Widget.Material3.Button.TextButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cambiar" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="16dp"
+                        app:strokeWidth="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Configuración de Ciudad"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:layout_marginBottom="12dp" />
+
+                            <Spinner
+                                android:id="@+id/spSede"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnSaveProfile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Guardar Cambios" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLogout"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cerrar Sesión"
+                        android:textColor="?attr/colorError" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toLeftOf="@+id/amountLayout"
+        android:layout_toStartOf="@+id/amountLayout">
+
+        <TextView
+            android:id="@+id/vehicleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle ID"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/vehicleAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+            <TextView
+                android:id="@+id/tvListMatricula"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABC-1234"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/bike_red" />
+            <TextView
+                android:id="@+id/tvListStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="LIBRE"
+                android:textSize="10sp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:background="@drawable/bg_status_badge" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvListBattery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--% / -- Km"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/amountLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/vehicleDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00 Km"
+            android:textStyle="bold"
+            android:textColor="@color/bike_red" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Evidencia de viaje" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Antes de terminar el viaje, por favor toma fotos del estado del vehículo."
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Front Photo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/llPhotoDelantera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+                    <ImageView
+                        android:id="@+id/ivPhotoDelantera"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:src="@android:drawable/ic_menu_camera"
+                        android:scaleType="centerCrop"
+                        android:background="?attr/colorSurfaceVariant" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parte Delantera"
+                        android:layout_marginStart="16dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Rear Photo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/llPhotoTrasera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+                    <ImageView
+                        android:id="@+id/ivPhotoTrasera"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:src="@android:drawable/ic_menu_camera"
+                        android:scaleType="centerCrop"
+                        android:background="?attr/colorSurfaceVariant" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parte Trasera"
+                        android:layout_marginStart="16dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Dashboard Photo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/llPhotoInterior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+                    <ImageView
+                        android:id="@+id/ivPhotoInterior"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:src="@android:drawable/ic_menu_camera"
+                        android:scaleType="centerCrop"
+                        android:background="?attr/colorSurfaceVariant" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cuadro de Mandos"
+                        android:layout_marginStart="16dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmitPhotos"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="Subir y Finalizar"
+                android:enabled="false"
+                app:cornerRadius="32dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSkipPhotos"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Omitir (Solo para errores)"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/pbUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

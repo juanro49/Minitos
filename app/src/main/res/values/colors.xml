@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- M3 Primary -->
+    <color name="primary">#006684</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#BFE9FF</color>
+    <color name="onPrimaryContainer">#001F2A</color>
+
+    <!-- M3 Secondary -->
+    <color name="secondary">#4D616C</color>
+    <color name="onSecondary">#FFFFFF</color>
+    <color name="secondaryContainer">#D0E6F2</color>
+    <color name="onSecondaryContainer">#081E27</color>
+
+    <!-- M3 Tertiary -->
+    <color name="tertiary">#5D5B7D</color>
+    <color name="onTertiary">#FFFFFF</color>
+    <color name="tertiaryContainer">#E3DFFF</color>
+    <color name="onTertiaryContainer">#1A1836</color>
+
+    <!-- M3 Surface -->
+    <color name="surface">#FBFCFE</color>
+    <color name="onSurface">#191C1E</color>
+    <color name="surfaceVariant">#DCE4E9</color>
+    <color name="onSurfaceVariant">#40484C</color>
+
+    <!-- Legacy and Special -->
+    <color name="bike_red">#FF5252</color>
+    <color name="parking_blue_dark">#004B8D</color>
+    <color name="white">#FFFFFF</color>
+</resources>

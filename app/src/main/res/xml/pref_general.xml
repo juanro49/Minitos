@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Interfaz de Usuario">
+        <ListPreference
+            android:defaultValue="system"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/theme_values"
+            android:key="ui_theme"
+            android:title="Tema" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="ui_dynamic_color"
+            android:summary="Usa colores basados en tu fondo de pantalla (Android 12+)"
+            android:title="Colores dinámicos" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Mapa">
+        <ListPreference
+            android:defaultValue="@string/pref_default_map_layer_value"
+            android:dialogTitle="@string/pref_map_layer_title"
+            android:entries="@array/pref_map_layer_entries"
+            android:entryValues="@array/pref_map_layer_values"
+            android:key="pref_map_layer"
+            android:summary="%s"
+            android:title="@string/pref_map_layer_title" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/pref_title_default_tab"
+            android:entries="@array/pref_default_tab_entries"
+            android:entryValues="@array/pref_default_tab_values"
+            android:key="pref_default_tab"
+            android:summary="%s"
+            android:title="@string/pref_title_default_tab" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Más">
+        <Preference
+            android:key="advanced"
+            android:title="@string/pref_title_advanced" />
+
+        <Preference
+            android:key="about"
+            android:title="@string/pref_title_about" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

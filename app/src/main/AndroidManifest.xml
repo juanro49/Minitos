@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="geo"/>
+        </intent>
+    </queries>
+
+    <application
+        android:name=".MinitosApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_minitos"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".gui.activity.MapActivity"
+            android:label="@string/title_activity_map"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".gui.activity.VehiclesListActivity"
+            android:label="@string/app_name"
+            android:exported="true"
+            android:windowSoftInputMode="stateUnspecified|adjustPan" >
+        </activity>
+
+        <activity
+            android:name=".gui.activity.MinitosProfileActivity"
+            android:label="Mi Perfil / Login"
+            android:parentActivityName=".gui.activity.MapActivity">
+        </activity>
+
+        <activity
+            android:name=".gui.activity.MinitosPhotoActivity"
+            android:label="Evidencia de viaje">
+        </activity>
+
+        <activity
+            android:name=".gui.activity.MinitosWalletActivity"
+            android:label="Mi Monedero Minits">
+        </activity>
+
+        <activity
+            android:name=".gui.activity.MinitosTripSummaryActivity"
+            android:label="Resumen de viaje">
+        </activity>
+
+        <activity
+            android:name=".gui.activity.MinitosHistoryActivity"
+            android:label="Mis Viajes"
+            android:parentActivityName=".gui.activity.MapActivity">
+        </activity>
+
+        <activity
+            android:name=".gui.activity.MinitosMovementDetailActivity"
+            android:label="Detalle del Movimiento">
+        </activity>
+
+        <activity
+            android:name=".gui.activity.MinitosHelpActivity"
+            android:label="Ayuda y Tutoriales"
+            android:parentActivityName=".gui.activity.MapActivity">
+        </activity>
+
+        <activity
+            android:name=".gui.activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".gui.activity.MapActivity">
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".service.TripNotificationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Vehicle trip and booking status monitoring" />
+        </service>
+
+    </application>
+</manifest>

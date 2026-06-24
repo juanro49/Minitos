@@ -1,0 +1,1 @@
+Minitos es un cliente de código abierto e independiente para el servicio de movilidad eléctrica Minits.

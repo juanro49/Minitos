@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- M3 Dark Palette -->
+    <color name="primary">#004f57</color>
+    <color name="onPrimary">#E0F2F1</color>
+    <color name="primaryContainer">#005961</color>
+    <color name="onPrimaryContainer">#BEEAE8</color>
+
+    <color name="secondary">#C4C5DD</color>
+    <color name="onSecondary">#2D2F42</color>
+    <color name="secondaryContainer">#434559</color>
+    <color name="onSecondaryContainer">#E0E1F9</color>
+
+    <color name="tertiary">#E6BAD7</color>
+    <color name="onTertiary">#45263D</color>
+    <color name="tertiaryContainer">#5D3C54</color>
+    <color name="onTertiaryContainer">#FFD7F1</color>
+
+    <color name="surface">#1B1B1F</color>
+    <color name="onSurface">#E4E1E6</color>
+    <color name="surfaceVariant">#46464F</color>
+    <color name="onSurfaceVariant">#C7C5D0</color>
+</resources>

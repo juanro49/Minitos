@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gui.activity.MapActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_menu_24dp"
+                app:title="@string/app_name" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/activity_map_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <org.maplibre.android.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/mapDbLastUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:background="#80FFFFFF"
+                android:padding="2dp" />
+
+            <ProgressBar
+                android:id="@+id/map_progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mapDbLastUpdate"
+                android:visibility="gone" />
+
+            <!-- Filter Chips -->
+            <HorizontalScrollView
+                android:id="@+id/filter_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/map_progressbar"
+                android:scrollbars="none"
+                android:padding="8dp"
+                android:clipToPadding="false">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_filters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="false">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_all"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_all"
+                        android:checked="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_carver"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_carver" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_twizy"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_twizy" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_patinete"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_scooter" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_my_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="112dp"
+                android:src="@drawable/ic_menu_mylocation"
+                app:tint="?attr/colorOnPrimaryContainer"
+                app:backgroundTint="?attr/colorPrimaryContainer"
+                app:elevation="4dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="180dp"
+                android:src="@android:drawable/stat_notify_sync"
+                app:fabSize="mini"
+                app:tint="?attr/colorOnSurfaceVariant"
+                app:backgroundTint="?attr/colorSurfaceContainerHigh"
+                app:elevation="2dp" />
+
+        </RelativeLayout>
+
+        <!-- Bottom Sheet Details -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="8dp"
+            app:strokeWidth="0dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:behavior_peekHeight="0dp"
+            app:behavior_hideable="true">
+
+            <LinearLayout
+                android:id="@+id/bottom_sheet_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="?attr/colorSurfaceContainerLow">
+
+                <!-- Drag Handle -->
+                <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                    android:id="@+id/drag_handle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/vehicleName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_toStartOf="@id/llDetailActions"
+                            android:text="Vehicle ID"
+                            android:textAppearance="?attr/textAppearanceTitleLarge"
+                            android:textColor="?attr/colorOnSurface" />
+
+                        <LinearLayout
+                            android:id="@+id/llDetailActions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnFavorite"
+                                style="@style/Widget.Material3.Button.IconButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:icon="@drawable/ic_menu_favorite_outline"
+                                app:iconTint="?attr/colorPrimary" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnDirections"
+                                style="@style/Widget.Material3.Button.IconButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:icon="@drawable/ic_menu_directions"
+                                app:iconTint="?attr/colorPrimary" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/vehicleAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/vehicleName"
+                            android:text="Address"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/vehicleNetwork"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/vehicleAddress"
+                            android:text="Minits"
+                            android:textAppearance="?attr/textAppearanceLabelLarge"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/vehicleLastUpdate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/vehicleNetwork"
+                            android:text="last update"
+                            android:textAppearance="?attr/textAppearanceBodySmall" />
+
+                        <!-- Minits Data Container -->
+                        <LinearLayout
+                            android:id="@+id/minitsDetailsContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/vehicleLastUpdate"
+                            android:orientation="vertical"
+                            android:paddingTop="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:paddingBottom="8dp">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_menu_mylocation"
+                                    app:tint="?attr/colorPrimary" />
+
+                                <TextView
+                                    android:id="@+id/tvMinitsBatteryAutonomy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="8dp"
+                                    android:paddingStart="8dp"
+                                    android:text="--% / -- Km"
+                                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingBottom="8dp">
+
+                                <TextView
+                                    android:id="@+id/tvMinitsRateActive"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:text="Activa: -- €/min" />
+
+                                <TextView
+                                    android:id="@+id/tvMinitsRateStandby"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:text="Standby: -- €/min" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvMinitsSpecs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?attr/textAppearanceBodySmall"
+                                android:text="Pasajeros: - | Motor: - | Transmisión: -" />
+
+                            <LinearLayout
+                                android:id="@+id/llWalkingInfo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:paddingTop="8dp"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_walking"
+                                    app:tint="?attr/colorOnSurfaceVariant" />
+
+                                <TextView
+                                    android:id="@+id/tvWalkingTimeDistance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="4dp"
+                                    android:paddingLeft="4dp"
+                                    android:text="-- min. | -- km"
+                                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                                    android:textColor="?attr/colorOnSurfaceVariant" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/minitsControls"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/minitsDetailsContainer"
+                            android:orientation="vertical"
+                            android:paddingTop="16dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnReservar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Reservar"
+                                app:cornerRadius="16dp" />
+
+                            <LinearLayout
+                                android:id="@+id/llActiveReservationControls"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnUnlock"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Abrir"
+                                    app:cornerRadius="16dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnLock"
+                                    style="@style/Widget.Material3.Button.TonalButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Cerrar"
+                                    android:layout_marginHorizontal="8dp"
+                                    app:cornerRadius="16dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btnFinalizar"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Finalizar"
+                                    app:cornerRadius="16dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_drawer"
+        app:headerLayout="@layout/nav_header" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

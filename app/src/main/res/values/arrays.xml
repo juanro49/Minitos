@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_map_layer_entries">
+        <item>Minitos (Liberty)</item>
+        <item>Nocturno (Dark)</item>
+        <item>Brillante (Bright)</item>
+        <item>Limpio (Positron)</item>
+    </string-array>
+
+    <string-array name="pref_map_layer_values" translatable="false">
+        <item>@string/map_style_liberty</item>
+        <item>@string/map_style_dark</item>
+        <item>@string/map_style_bright</item>
+        <item>@string/map_style_positron</item>
+    </string-array>
+
+    <string-array name="theme_entries">
+        <item>Claro</item>
+        <item>Oscuro</item>
+        <item>Predeterminado del sistema</item>
+    </string-array>
+
+    <string-array name="theme_values" translatable="false">
+        <item>light</item>
+        <item>dark</item>
+        <item>system</item>
+    </string-array>
+
+    <string-array name="pref_default_tab_entries">
+        <item>Vehículos cercanos</item>
+        <item>Vehículos favoritos</item>
+        <item>Todos los vehículos</item>
+    </string-array>
+
+    <string-array name="pref_default_tab_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 Expressive Shapes -->
+    <style name="ShapeAppearance.Minitos.SmallComponent" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Minitos.MediumComponent" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Minitos.LargeComponent" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Minitos.ExtraLargeComponent" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+        <item name="cornerSize">32dp</item>
+    </style>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/etPrefix"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:hint="+34"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Teléfono"
+        android:inputType="phone"
+        android:layout_marginStart="12dp" />
+
+</LinearLayout>

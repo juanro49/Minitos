@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name -->
+    <string name="app_name" translatable="false">Minitos</string>
+    <!-- Error messages -->
+    <string name="connection_error">Error de conexión</string>
+    <string name="ssl_error">Certificado SSL no confiable</string>
+    <string name="json_error">Error al obtener datos</string>
+    <!-- Actions -->
+    <string name="action_settings">Ajustes</string>
+    <string name="action_refresh">Refrescar</string>
+    <string name="action_map">Mapa</string>
+    <string name="action_directions">Direcciones</string>
+    <string name="action_favorite">Favorito</string>
+    <string name="action_my_location">Mi ubicación</string>
+    <string name="action_search">Buscar</string>
+    <!-- Activities titles -->
+    <string name="title_activity_vehicles_list">Lista de Vehículos</string>
+    <string name="title_activity_map">Minitos</string>
+    <string name="title_activity_settings">Ajustes</string>
+    <!-- Map -->
+    <string name="location_not_found">Ubicación no encontrada</string>
+    <string name="location_not_granted">Permiso de ubicación denegado</string>
+    <string name="location_coarse_only">Usando ubicación aproximada</string>
+    <string name="location_outdated">Ubicación de hace %1$d minutos</string>
+    <string name="map_cache_cleaning_started">Limpiando caché del mapa...</string>
+    <string name="map_cache_cleaning_done">Caché del mapa limpia</string>
+    <!-- Various -->
+    <string name="all_vehicles">Todos</string>
+    <string name="favorite_vehicles">Favoritos</string>
+    <string name="nearby_vehicles">Cercanos</string>
+    <string name="no_vehicles">No hay vehículos disponibles</string>
+    <string name="no_favorite_vehicles">No hay favoritos guardados</string>
+    <string name="no_nearby_vehicles">No hay vehículos cerca</string>
+    <string name="vehicle_added_to_favorites">Añadido a favoritos</string>
+    <string name="vehicles_removed_from_favorites">Eliminado de favoritos</string>
+    <string name="no_nav_application">No tienes aplicaciones de navegación instaladas</string>
+    <string name="db_last_update">Última actualización: %1$s</string>
+    <string name="db_last_update_never">nunca</string>
+    <plurals name="updated_secondes_ago">
+        <item quantity="one">hace %d segundo</item>
+        <item quantity="other">hace %d segundos</item>
+    </plurals>
+    <string name="updated_just_now">ahora mismo</string>
+    <plurals name="updated_minutes_ago">
+        <item quantity="one">hace %d minuto</item>
+        <item quantity="other">hace %d minutos</item>
+    </plurals>
+    <plurals name="updated_hours_ago">
+        <item quantity="one">hace %d hora</item>
+        <item quantity="other">hace %d horas</item>
+    </plurals>
+    <plurals name="updated_days_ago">
+        <item quantity="one">hace %d día</item>
+        <item quantity="other">hace %d días</item>
+    </plurals>
+    <!-- Settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_license">Licencia</string>
+    <string name="pref_title_about">Acerca de Minitos</string>
+    <string name="pref_disclaimer">Minitos es una aplicación independiente desarrollada por Juanro y no está afiliada, asociada, autorizada, respaldada ni conectada oficialmente de ninguna manera con Minits MT S.A. ni con ninguno de sus servicios oficiales.</string>
+    <string name="pref_title_version">Versión</string>
+    <string name="pref_map_layer_title">Capa del mapa</string>
+    <string name="map_style_liberty" translatable="false">https://tiles.openfreemap.org/styles/liberty</string>
+    <string name="map_style_dark" translatable="false">https://tiles.openfreemap.org/styles/dark</string>
+    <string name="map_style_bright" translatable="false">https://tiles.openfreemap.org/styles/bright</string>
+    <string name="map_style_positron" translatable="false">https://tiles.openfreemap.org/styles/positron</string>
+    <string name="pref_default_map_layer_value" translatable="false">@string/map_style_liberty</string>
+    <string name="pref_title_advanced">Avanzado</string>
+    <string name="pref_title_default_tab">Pestaña inicial</string>
+    <string name="pref_map_tiles_cache_max_size_title">Limpiar caché si supera</string>
+    <string name="pref_map_tiles_cache_max_size_summary">%1$s MB (actual: %2$s MB)</string>
+    <string name="pref_map_tiles_cache_trim_size_title">Limpiar hasta reducir a</string>
+    <string name="pref_map_tiles_cache_trim_size_summary">%1$s MB</string>
+    <string name="pref_minits_app_version_title">Versión de la API de Minits</string>
+    <string name="pref_minits_app_version_summary">Versión simulada en las peticiones (actual: %s)</string>
+    <string name="server_sends_old_data">El servidor envía datos antiguos o la hora del sistema no es correcta</string>
+    <string name="pref_map_tiles_cache_size_hint">Número entre %1$s y %2$s</string>
+    <!-- Minits -->
+    <string name="minits_unlock">Abrir</string>
+    <string name="minits_lock">Cerrar</string>
+    <string name="minits_unlock_success">Vehículo abierto</string>
+    <string name="minits_lock_success">Vehículo cerrado</string>
+    <string name="minits_error">Error Minits: %s</string>
+    <string name="vehicle_battery_autonomy">%1$s / %2$s</string>
+    <string name="vehicle_rate_active">Activa: %1$.2f €/min</string>
+    <string name="vehicle_rate_standby">Standby: %1$.2f €/min</string>
+    <string name="vehicle_specs">Pasajeros: %1$d | Motor: %2$s | Transmisión: %3$s</string>
+    <string name="wallet_pack_pay">Pagas %1$s</string>
+
+    <!-- Navigation Drawer -->
+    <string name="menu_map">Mapa</string>
+    <string name="menu_vehicles">Lista de Vehículos</string>
+    <string name="menu_wallet">Mi Monedero</string>
+    <string name="menu_trips">Mis viajes</string>
+    <string name="menu_profile">Mi Perfil</string>
+    <string name="menu_help">Ayuda</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="menu_account_header">Cuenta</string>
+    <string name="summary_title">Resumen del viaje</string>
+    <string name="summary_vehicle">Vehículo</string>
+    <string name="summary_trip_start">Inicio del viaje</string>
+    <string name="summary_trip_end">Fin del viaje</string>
+    <string name="summary_battery_start">Batería inicio</string>
+    <string name="summary_battery_end">Batería fin</string>
+    <string name="summary_distance_traveled">Distancia recorrida</string>
+    <string name="summary_driving">Conducción</string>
+    <string name="summary_standby">Standby</string>
+    <string name="summary_total_amount">Importe total del viaje</string>
+    <string name="summary_co2_saving">Has dejado de emitir con este viaje en Minits:</string>
+    <string name="summary_co2_value">%1$.2f Kg/CO2</string>
+    <string name="summary_charity_msg">Ha ayudado a l@s niñ@s de Sierra Leona.</string>
+    <string name="url_fundacion_atabal">https://www.fundacionatabal.org/</string>
+    <string name="movement_detail_title">Detalle del Movimiento</string>
+    <string name="movement_gift_sent">Regalo enviado</string>
+    <string name="movement_gift_received">Regalo recibido</string>
+    <string name="movement_recharge">Recarga de saldo</string>
+    <string name="movement_close">Cerrar</string>
+    <string name="movement_date_label">Fecha y hora</string>
+    <string name="movement_desc_label">Concepto</string>
+    <string name="summary_accept">Aceptar</string>
+
+    <!-- Walking Info -->
+    <string name="walking_time_distance">%1$d min. | %2$s</string>
+
+    <!-- Settings ORS -->
+    <string name="pref_ors_api_key_title">OpenRouteService API Key</string>
+    <string name="pref_ors_api_key_summary">Clave para habilitar rutas peatonales internas. Consíguela en openrouteservice.org</string>
+
+    <!-- Filters -->
+    <string name="filter_all">Todos</string>
+    <string name="filter_carver">Carver</string>
+    <string name="filter_twizy">Twizy</string>
+    <string name="filter_scooter">Patinete</string>
+
+</resources>

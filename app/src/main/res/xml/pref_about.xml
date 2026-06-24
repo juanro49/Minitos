@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="pref_version"
+        android:title="Versión" />
+
+    <Preference
+        android:key="pref_license"
+        android:title="Licencia"
+        android:summary="GPLv3" />
+
+    <Preference
+        android:key="pref_disclaimer"
+        android:title="Aviso Legal"
+        android:summary="@string/pref_disclaimer" />
+
+</PreferenceScreen>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <EditTextPreference
+            android:key="pref_map_tiles_cache_max_size"
+            android:title="@string/pref_map_tiles_cache_max_size_title"
+            android:selectAllOnFocus="true"
+            android:inputType="number"
+            android:defaultValue="100" />
+
+        <EditTextPreference
+            android:key="pref_map_tiles_cache_trim_size"
+            android:title="@string/pref_map_tiles_cache_trim_size_title"
+            android:selectAllOnFocus="true"
+            android:inputType="number"
+            android:defaultValue="20" />
+
+        <EditTextPreference
+            android:key="pref_ors_api_key"
+            android:title="@string/pref_ors_api_key_title"
+            android:summary="@string/pref_ors_api_key_summary"
+            android:selectAllOnFocus="true"
+            android:inputType="textPassword" />
+
+        <EditTextPreference
+            android:key="pref_minits_app_version"
+            android:title="@string/pref_minits_app_version_title"
+            android:summary="@string/pref_minits_app_version_summary"
+            android:defaultValue="4.9.4.6rel"
+            app:useSimpleSummaryProvider="true" />
+</PreferenceScreen>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:minHeight="140dp"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="42dp"
+    android:layout_margin="6dp"
+    android:background="@drawable/map_bubble"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvPackName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pack 10"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:textColor="#9E9E9E"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPackReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10 €"
+        android:textColor="@color/bike_red"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginVertical="4dp" />
+
+    <TextView
+        android:id="@+id/tvPackPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pagas 8 €"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:textColor="#616161" />
+
+</LinearLayout>
