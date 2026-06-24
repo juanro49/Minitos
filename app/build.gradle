@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 37
-    namespace "org.juanro.minitos"
+    compileSdk = 37
+    namespace = "org.juanro.minitos"
 
     defaultConfig {
-        applicationId "org.juanro.minitos"
-        minSdkVersion 26
-        targetSdkVersion 37
-        versionCode 100
-        versionName "1.0.0"
+        applicationId = "org.juanro.minitos"
+        minSdk = 26
+        targetSdk = 37
+        versionCode = 100
+        versionName = "1.0.0"
         
         javaCompileOptions {
             annotationProcessorOptions {
@@ -20,8 +20,8 @@ android {
 
     buildFeatures {
         buildConfig = true
-        viewBinding true
-        resValues true
+        viewBinding = true
+        resValues = true
     }
 
     compileOptions {
@@ -37,25 +37,26 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled = true
+            shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             resValue "string", "build_applicationId", defaultConfig.applicationId
         }
         debug {
-            applicationIdSuffix ".debug"
+            applicationIdSuffix = ".debug"
             resValue "string", "build_applicationId", "${defaultConfig.applicationId}${applicationIdSuffix}"
             resValue "string", "app_name", "Minitos Debug"
-            debuggable true
-            minifyEnabled false
+            debuggable = true
+            minifyEnabled = false
         }
 
     }
     lint {
-        abortOnError false
+        abortOnError = false
     }
     dependenciesInfo {
-        includeInApk false
-        includeInBundle false
+        includeInApk = false
+        includeInBundle = false
     }
 
 }

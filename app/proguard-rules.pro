@@ -1,17 +1,27 @@
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in /opt/android-sdk/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Optimizaciones básicas para Minitos
 
-# Add any project specific keep options here:
+# --- GSON ---
+# Mantener los modelos de datos que se parsean desde el API de Minits
+-keep class org.juanro.minitos.data.api.MinitsModels** { *; }
+-keepclassmembers class org.juanro.minitos.data.api.MinitsModels** { *; }
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# --- ROOM ---
+# Mantener las entidades de la base de datos para evitar problemas con Room
+-keep class org.juanro.minitos.model.entity.** { *; }
+-keepclassmembers class org.juanro.minitos.model.entity.** { *; }
+
+# Reglas generales para Gson
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.google.gson.stream.** { *; }
+
+# --- MAPLIBRE ---
+-keep class org.maplibre.gl.** { *; }
+-dontwarn org.maplibre.gl.**
+
+# --- OKHTTP / OKIO ---
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+-dontwarn org.conscrypt.**
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase

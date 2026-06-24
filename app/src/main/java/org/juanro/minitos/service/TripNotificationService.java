@@ -5,9 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.IBinder;
 
 import androidx.annotation.Nullable;
@@ -33,7 +31,7 @@ public class TripNotificationService extends Service {
                 String vehicleName = intent.getStringExtra(EXTRA_VEHICLE_NAME);
                 startForeground(NOTIFICATION_ID, createNotification(vehicleName));
             } else if (ACTION_STOP.equals(action)) {
-                stopForeground(true);
+                stopForeground(STOP_FOREGROUND_REMOVE);
                 stopSelf();
             }
         }
@@ -63,16 +61,14 @@ public class TripNotificationService extends Service {
     }
 
     private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel serviceChannel = new NotificationChannel(
-                    CHANNEL_ID,
-                    "Viaje Activo",
-                    NotificationManager.IMPORTANCE_LOW
-            );
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            if (manager != null) {
-                manager.createNotificationChannel(serviceChannel);
-            }
+        NotificationChannel serviceChannel = new NotificationChannel(
+                CHANNEL_ID,
+                "Viaje Activo",
+                NotificationManager.IMPORTANCE_LOW
+        );
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        if (manager != null) {
+            manager.createNotificationChannel(serviceChannel);
         }
     }
 
