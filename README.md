@@ -4,6 +4,8 @@ Minitos es un cliente de código abierto e independiente para el servicio de mov
 
 Esta aplicación permite localizar vehículos, gestionar reservas y controlar tus viajes de forma fluida y moderna, sin depender de los servicios propietarios de Google y utilizando tecnologías 100% libres.
 
+[![GitHub All Releases](https://img.shields.io/github/downloads/juanro49/Minitos/total?label=Github&logo=github)](https://github.com/juanro49/Minitos/releases)
+
 ## Características
 
 *   🗺️ **Mapas personalizables**: Mapas vectoriales gracias a **MapLibre Native**. Elige entre varios estilos de mapa (Liberty, Dark, Bright, Positron) servidos por **OpenFreeMap**.
@@ -53,6 +55,8 @@ Minitos nace con la idea de ofrecer una alternativa libre que respeta la privaci
 ## Licencia
 
 Este proyecto se distribuye bajo la licencia **GPLv3**.
+
+[![License](https://img.shields.io/github/license/juanro49/Minitos)](https://opensource.org/license/gpl-3.0)
 
 ```text
 Minitos. Cliente libre para Minits.
